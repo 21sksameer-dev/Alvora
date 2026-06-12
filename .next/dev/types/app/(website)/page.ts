@@ -1,4 +1,4 @@
-// File: C:\Users\Admin\Desktop\_work\Alvora\app\(website)\page.js
+// File: C:\Users\Admin\Desktop\_work\Alvora\Alvora\app\(website)\page.js
 import * as entry from '../../../../../app/(website)/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

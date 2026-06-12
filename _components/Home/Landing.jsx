@@ -1,16 +1,25 @@
 'use client'
 import React from 'react'
 import { Button } from '@heroui/react';
+import CategoriesTab from '@/_components/Home/CategoriesTab';
 
 const Landing = (props) => {
     return (
-        <div>
-            <h1 className="text-3xl font-bold underline">
-                Hello world!
-            </h1>
-            <Button variant="secondary">
-                My Button
-            </Button>
+        <div className="w-full">
+            <CategoriesTab />
+            <div>Sameer</div>
+            <div>Sameer</div>
+            <div>Sameer</div>
+            <div>Sameer</div>
+            <div>Sameer</div>
+            <div>Sameer</div>
+            <div>Sameer</div>
+            <div>Sameer</div>
+            <div>Sameer</div>
+            <div>Sameer</div>
+            <div>Sameer</div>
+            <div>Sameer</div>
+            <div>Sameer</div>
         </div>
     )
 }
