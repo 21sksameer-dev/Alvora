@@ -4,6 +4,7 @@ Shirt,
 TabletSmartphone,
 Lamp } from "lucide-react"
 import CategoriesContent from "@/_components/Home/CategoriesContent";
+import FashionContent from "@/_components/Home/FashionContent";
 
 const CategoriesTab = () => {
     return (
@@ -23,8 +24,7 @@ const CategoriesTab = () => {
                 <CategoriesContent />
             </Tabs.Panel>
             <Tabs.Panel className="px-4" id="weekly">
-                <h3 className="mb-2 font-semibold">Weekly</h3>
-                <p className="text-sm text-gray-600">Manage your weekly tasks and goals.</p>
+                <FashionContent />
             </Tabs.Panel>
             <Tabs.Panel className="px-4" id="bi-weekly">
                 <h3 className="mb-2 font-semibold">Bi-Weekly</h3>

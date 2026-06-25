@@ -7,19 +7,6 @@ const Landing = (props) => {
     return (
         <div className="w-full">
             <CategoriesTab />
-            <div>Sameer</div>
-            <div>Sameer</div>
-            <div>Sameer</div>
-            <div>Sameer</div>
-            <div>Sameer</div>
-            <div>Sameer</div>
-            <div>Sameer</div>
-            <div>Sameer</div>
-            <div>Sameer</div>
-            <div>Sameer</div>
-            <div>Sameer</div>
-            <div>Sameer</div>
-            <div>Sameer</div>
         </div>
     )
 }

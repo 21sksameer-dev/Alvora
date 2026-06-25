@@ -588,10 +588,10 @@
 
 
 .mySwiperGuest .swiper-pagination-bullet-active {
-  background-color: white;
+  background-color: black;
   /* Active bullet color */
-  border: 2px solid white;
-  padding: 4px;
+  border: 2px solid black;
+  /* padding: 4px; */
 }
 
 .mySwiperGuest .swiper-button-prev,

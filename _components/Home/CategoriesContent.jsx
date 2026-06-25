@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
-import { DotIcon } from "lucide-react";
+import { DotIcon, CircleArrowRight } from "lucide-react";
 import "@/_components/Carousel.css";
 import IMAGES from "@/public";
 import { useRouter } from "next/navigation";
@@ -16,7 +16,7 @@ const CategoriesContent = () => {
 
     const demoTours = [
         {
-            image: "/images/goa.jpg",
+            image: IMAGES.p1,
             region: "Goa",
             highlight: "Beach Paradise",
             destinations: ["Calangute", "Baga", "Anjuna"],
@@ -24,7 +24,7 @@ const CategoriesContent = () => {
             price: "₹12,999",
         },
         {
-            image: "/images/kashmir.jpg",
+            image: IMAGES.p2,
             region: "Kashmir",
             highlight: "Heaven on Earth",
             destinations: ["Srinagar", "Gulmarg", "Pahalgam"],
@@ -32,7 +32,15 @@ const CategoriesContent = () => {
             price: "₹24,999",
         },
         {
-            image: "/images/kerala.jpg",
+            image: IMAGES.p3,
+            region: "Kerala",
+            highlight: "God's Own Country",
+            destinations: ["Munnar", "Thekkady", "Alleppey"],
+            days: "5 Days / 4 Nights",
+            price: "₹18,999",
+        },
+        {
+            image: IMAGES.p4,
             region: "Kerala",
             highlight: "God's Own Country",
             destinations: ["Munnar", "Thekkady", "Alleppey"],
@@ -41,103 +49,278 @@ const CategoriesContent = () => {
         },
     ];
 
+
+
+    const categories = [
+        "Tshirts",
+        "Shirts",
+        "Hoodies",
+        "Caps",
+        "Bags",
+        "Tshirts",
+        "Shirts",
+        "Hoodies",
+        "Caps",
+        "Bags",
+        "Tshirts",
+        "Shirts",
+        "Hoodies",
+        "Caps",
+        "Bags",
+        "Tshirts",
+        "Shirts",
+        "Hoodies",
+        "Caps",
+        "Bags",
+        "Tshirts",
+
+    ];
+
+
+    const products = [
+        {
+            id: 1,
+            name: "Garnier Men Oil Clear Deep Cleansing Face Wash (150 g)",
+            image: IMAGES.pd1,
+            rating: 4.5,
+            price: 739,
+            originalPrice: 2499,
+            offer: "₹702 with Bank offer + more",
+        },
+        {
+            id: 2,
+            name: "Nivea Men Face Wash (100 g)",
+            image: IMAGES.pd2,
+            rating: 4.3,
+            price: 299,
+            originalPrice: 499,
+            offer: "₹280 with Bank offer + more",
+        },
+        {
+            id: 3,
+            name: "Beardo Activated Charcoal Face Wash",
+            image: IMAGES.pd3,
+            rating: 4.6,
+            price: 349,
+            originalPrice: 599,
+            offer: "₹330 with Bank offer + more",
+        },
+        {
+            id: 4,
+            name: "Garnier Men Oil Clear Deep Cleansing Face Wash (150 g)",
+            image: IMAGES.pd1,
+            rating: 4.5,
+            price: 739,
+            originalPrice: 2499,
+            offer: "₹702 with Bank offer + more",
+        },
+        {
+            id: 5,
+            name: "Nivea Men Face Wash (100 g)",
+            image: IMAGES.pd2,
+            rating: 4.3,
+            price: 299,
+            originalPrice: 499,
+            offer: "₹280 with Bank offer + more",
+        },
+    ];
+
     return (
-        <div>
-            <Card className="w-full items-stretch md:flex-row">
-                <div className="relative h-35 w-full shrink-0 overflow-hidden rounded-2xl sm:h-30 sm:w-30">
-                    <img
-                        alt="Cherries"
-                        className="pointer-events-none absolute inset-0 h-full w-full scale-125 object-cover select-none"
-                        loading="lazy"
-                        src="https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/docs/cherries.jpeg"
+        <div className="flex flex-col gap-6">
+
+            <div>
+                <Card className="w-auto h-26 lg:w-full lg:h-75 overflow-hidden relative">
+                    <Image
+                        src={IMAGES.pamplet1}
+                        alt="pamplet"
+                        fill
+                        className="lg:object-cover"
                     />
-                </div>
-                <div className="flex flex-1 flex-col gap-3">
-                    <Card.Header className="gap-1">
-                        <Card.Title className="pr-8">Become an ACME Creator!</Card.Title>
-                        <Card.Description>
-                            Lorem ipsum dolor sit amet consectetur. Sed arcu donec id aliquam dolor sed amet
-                            faucibus etiam.
-                        </Card.Description>
-                        <CloseButton aria-label="Close banner" className="absolute top-3 right-3" />
-                    </Card.Header>
-                    <Card.Footer className="mt-auto flex w-full flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
-                        <div className="flex flex-col">
-                            <span className="text-sm font-medium text-foreground">Only 10 spots</span>
-                            <span className="text-xs text-muted">Submission ends Oct 10.</span>
-                        </div>
-                        <Button className="w-full sm:w-auto">Apply Now</Button>
-                    </Card.Footer>
-                </div>
-            </Card>
+                </Card>
+            </div>
 
 
-            <Swiper
-                spaceBetween={30}
-                pagination={{
-                    clickable: true,
-                }}
-                autoplay={true}
-                navigation={false}
-                modules={[Pagination, Navigation, Autoplay]}
-                className="mySwiper w-full"
-                style={{
-                    "--swiper-navigation-size": "10px",
-                }}
-            >
-                {demoTours.map((tour, index) => (
-                    <SwiperSlide key={index} className="relative">
-                        <div className="relative w-full h-72 md:h-[400px] rounded-3xl overflow-hidden">
+            <div>
+                <Swiper
+                    breakpoints={{
+                        640: {
+                            slidesPerView: 1.5,
+                            spaceBetween: 15,
+                        },
+                        768: {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
+                        1024: {
+                            slidesPerView: 2.5,
+                            spaceBetween: 30,
+                        },
+                        1280: {
+                            slidesPerView: 2.5,
+                            spaceBetween: 30,
+                        },
+                    }}
+                    spaceBetween={32}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    autoplay={true}
+                    navigation={false}
+                    modules={[Pagination, Navigation]}
+                    className="mySwiperGuest w-full h-80"
+                    style={{
+                        "--swiper-navigation-size": "10px",
+                    }}
+                >
+                    {demoTours.map((tour, index) => (
+                        <SwiperSlide key={index} className="relative">
+                            <div className="w-full h-full overflow-hidden relative rounded-3xl">
+                                <Image
+                                    src={tour.image}
+                                    alt={tour.highlight}
+                                    fill
+                                    className="object-fit"
+                                />
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div>
+
+            <div className="flex gap-5 flex-wrap gap-y-1">
+                {categories.map((item, index) => (
+                    <div key={index} className="w-24">
+                        <Card className="w-8 h-8 lg:w-24 lg:h-24 overflow-hidden relative rounded-xl">
                             <Image
-                                src={tour.image}
-                                alt={tour.highlight}
+                                src={IMAGES.c1}
+                                alt={item}
                                 fill
                                 className="object-cover"
                             />
-                        </div>
+                        </Card>
+                        <p className="text-[12px] mt-1 font-semibold">{item}</p>
+                    </div>
+                ))}
 
-                        <div className="absolute inset-0 bg-black/40 rounded-3xl flex items-center">
-                            <div className="m-5 lg:m-12 w-full h-full flex flex-col justify-evenly items-start">
-                                <div className="pl-4 border-l-4 border-white">
-                                    <span className="text-lg lg:text-xl text-white font-bold">
-                                        {tour.region}
-                                    </span>
+            </div>
 
-                                    <h2 className="text-2xl lg:text-4xl text-white font-bold">
-                                        {tour.highlight}
-                                    </h2>
+
+            <div className="w-full justify-items-start mt-2">
+                <div className="flex w-full justify-between">
+                    <p className="text-2xl font-semibold">Suggested For You</p>
+                    <span><CircleArrowRight className="text-blue size-8" /></span>
+                </div>
+
+
+                <div className="flex flex-wrap gap-4">
+                    {products.map((product) => (
+                        <div className="w-44 lg:w-64" key={product.id}>
+                            <Card className="h-85 lg:h-112.5 overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer flex flex-col">
+
+                                {/* Product Image */}
+                                <div className="relative w-full h-40 lg:h-56 bg-gray-100 shrink-0">
+                                    <Image
+                                        src={product.image}
+                                        alt={product.name}
+                                        fill
+                                        className="object-scale-down"
+                                    />
+
+                                    <div className="absolute bottom-2 left-2 bg-white px-2 py-1 rounded-md flex items-center gap-1 text-xs font-semibold shadow">
+                                        {product.rating}
+                                        <span className="text-green-600">★</span>
+                                    </div>
                                 </div>
 
-                                <div className="flex flex-col gap-2 lg:gap-5">
-                                    <div className="flex gap-x-2 lg:gap-x-5 items-center flex-wrap">
-                                        {tour.destinations.map((destination, i) => (
-                                            <div key={i} className="flex items-center">
-                                                <p className="lg:text-xl text-blue-200 font-medium">
-                                                    {destination}
-                                                </p>
+                                {/* Product Details */}
+                                <div className="p-3 flex flex-col flex-1">
+                                    <h3 className="text-sm font-medium line-clamp-2 min-h-10">
+                                        {product.name}
+                                    </h3>
 
-                                                {i < tour.destinations.length - 1 && (
-                                                    <DotIcon className="text-white mx-1 lg:mx-2" />
-                                                )}
-                                            </div>
-                                        ))}
+                                    <div className="flex items-center gap-2 mt-2">
+                                        <span className="text-lg font-bold text-black">
+                                            ₹{product.price}
+                                        </span>
+                                        <span className="text-sm text-gray-400 line-through">
+                                            ₹{product.originalPrice}
+                                        </span>
                                     </div>
 
-                                    <p className="lg:text-xl text-white font-medium">
-                                        {tour.days} | {tour.price}
+                                    <p className="text-sm text-blue-600 mt-1">
+                                        {product.offer}
                                     </p>
-                                </div>
 
-                                <button
-                                    className="bg-white px-4 py-3 rounded-xl font-bold text-gray-600"
-                                >
-                                    Book Now
-                                </button>
-                            </div>
+                                    {/* Push bottom content to bottom */}
+                                    <div className="mt-auto pt-3">
+                                        <button className="w-full py-2 rounded-lg bg-black text-white text-sm">
+                                            Book Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </Card>
                         </div>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
+                    ))}
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+            <div>
+                <Swiper
+                    breakpoints={{
+                        640: {
+                            slidesPerView: 1.5,
+                            spaceBetween: 15,
+                        },
+                        768: {
+                            slidesPerView: 2.5,
+                            spaceBetween: 20,
+                        },
+                        1024: {
+                            slidesPerView: 2.5,
+                            spaceBetween: 30,
+                        },
+                        1280: {
+                            slidesPerView: 2.5,
+                            spaceBetween: 30,
+                        },
+                    }}
+                    spaceBetween={32}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    autoplay={true}
+                    navigation={false}
+                    modules={[Pagination, Navigation]}
+                    className="mySwiperGuest w-full h-64"
+                    style={{
+                        "--swiper-navigation-size": "10px",
+                    }}
+                >
+                    {demoTours.map((tour, index) => (
+                        <SwiperSlide key={index} className="relative">
+                            <div className="w-full h-full overflow-hidden relative rounded-3xl">
+                                <Image
+                                    src={tour.image}
+                                    alt={tour.highlight}
+                                    fill
+                                    className="object-fit"
+                                />
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div>
+
         </div>
     )
 }
